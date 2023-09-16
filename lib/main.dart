@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_route/screens/home_screen/home_screen.dart';
 import 'package:islami_route/screens/sepha_screen/sepha_screen.dart';
 void main() {
+
   runApp( MyApp());
 }
 
