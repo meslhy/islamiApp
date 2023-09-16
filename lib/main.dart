@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_route/screens/home_screen/home_screen.dart';
-import 'package:islami_route/screens/sepha_screen/sepha_screen.dart';
+import 'package:islami_route/ui/screens/home_screen/home_screen.dart';
+import 'package:islami_route/ui/screens/home_screen/tabs/sepha_screen/sepha_screen.dart';
 void main() {
-
-
   runApp( MyApp());
 }
 
@@ -16,7 +14,6 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName :(context) =>  HomeScreen(),
         SebhaScreen.routeName :(context) =>  SebhaScreen(),
-
       },
       initialRoute: SebhaScreen.routeName,
     );

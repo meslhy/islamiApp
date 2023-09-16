@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islami_route/ui/utils/app_assets.dart';
+import 'package:islami_route/ui/utils/app_colors.dart';
 
 
 class SebhaScreen extends StatefulWidget {
@@ -31,9 +33,9 @@ class _SebhaScreenState extends State<SebhaScreen> {
         decoration: BoxDecoration(
             image:DecorationImage(
                 image: AssetImage(
-                  "assets/images/default_bg.png",
+                  AppAssets.DefaultBackGround,
                 ),
-                fit: BoxFit.cover
+                fit: BoxFit.fill
             )
         ),
         child: Column(
@@ -43,7 +45,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
               alignment: Alignment.topCenter,
               children: [
                 Image.asset(
-                    "assets/images/head_sebha.png"
+                    AppAssets.HeadSebhaLogoDefault
                 ),
                 Container(
                   height:370,
@@ -61,13 +63,10 @@ class _SebhaScreenState extends State<SebhaScreen> {
                       }
                       setState(() {});
                     },
-                    onLongPress: (){
-                      print("Done");
-                    },
                     child: Transform.rotate(
                       angle: rotationAngle *(-3.14159265359/180),
                       child: Image.asset(
-                          "assets/images/body_sebha.png"
+                          AppAssets.BodySebhaLogoDefault
                       ),
                     ),
                   ),
@@ -78,15 +77,15 @@ class _SebhaScreenState extends State<SebhaScreen> {
             Text(
               "عدد التسبيحات",
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
+                fontWeight: FontWeight.w600,
+                fontSize: 25,
               ),
             ),
             SizedBox(height: 26,),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 25,horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 20,horizontal: 15),
               decoration: BoxDecoration(
-                  color: Color(0xffbda384),
+                  color: AppColors.primary,
                   borderRadius: BorderRadius.circular(15)
               ),
 
@@ -94,7 +93,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
                 "$counter",
                 style: TextStyle(
                   // fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  fontSize: 25,
                 ),
               ),
             ),
@@ -102,16 +101,15 @@ class _SebhaScreenState extends State<SebhaScreen> {
             Container(
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                  color: Color(0xFFB7935F),
+                  color: AppColors.primary,
                   borderRadius: BorderRadius.circular(35)
               ),
 
               child: Text(
                 "${allText[indexOfAllText]}",
                 style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  color: AppColors.White,
+                  fontSize: 25,
                 ),
               ),
             ),
