@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami_route/ui/screens/home_screen/tabs/ahadeth/ahadeth_screen.dart';
+import 'package:islami_route/ui/screens/home_screen/tabs/quran/quran_screen.dart';
+import 'package:islami_route/ui/screens/home_screen/tabs/radio/radio_screen.dart';
+import 'package:islami_route/ui/screens/home_screen/tabs/sepha_screen/sepha_screen.dart';
 import 'package:islami_route/ui/utils/app_assets.dart';
 import 'package:islami_route/ui/utils/app_colors.dart';
 import 'package:islami_route/ui/utils/app_theme.dart';
@@ -13,6 +17,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
+  List<Widget> tabs = [
+    QuranScreen(),
+    AhadethScreen(),
+    SebhaScreen(),
+    RadioScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             style:AppTheme.appBArTitleTextStyle ,
           ),
         ),
+        body: tabs[currentIndex],
         bottomNavigationBar: buildBottomNavigationBar(),
       ),
     );
@@ -45,56 +56,36 @@ class _HomeScreenState extends State<HomeScreen> {
     data: ThemeData().copyWith(canvasColor: AppColors.primary),
     child: BottomNavigationBar(
       currentIndex: currentIndex,
+      onTap: (index){
+        currentIndex = index;
+        setState(() {});
+      } ,
       iconSize: 32,
       selectedFontSize: 20,
       selectedItemColor: AppColors.Accent,
       selectedLabelStyle: TextStyle(color: AppColors.Accent),
       items: [
         BottomNavigationBarItem(
-          icon:InkWell(
-            onTap: (){
-              currentIndex = 0;
-              setState(() {});
-            },
-            child: ImageIcon(
-              AssetImage(AppAssets.icQuran),
-            ),
+          icon:ImageIcon(
+            AssetImage(AppAssets.icQuran),
           ),
           label: "Quran",
         ),
         BottomNavigationBarItem(
-          icon:InkWell(
-            onTap: (){
-              currentIndex = 1;
-              setState(() {});
-            },
-            child: ImageIcon(
-              AssetImage(AppAssets.ichadeth),
-            ),
+          icon:ImageIcon(
+            AssetImage(AppAssets.ichadeth),
           ),
           label: "Hadeth",
         ),
         BottomNavigationBarItem(
-          icon:InkWell(
-            onTap: (){
-              currentIndex = 2;
-              setState(() {});
-            },
-            child: ImageIcon(
-              AssetImage(AppAssets.icSebha),
-            ),
+          icon:ImageIcon(
+            AssetImage(AppAssets.icSebha),
           ),
           label: "Sebha",
         ),
         BottomNavigationBarItem(
-          icon:InkWell(
-            onTap: (){
-              currentIndex = 3;
-              setState(() {});
-            },
-            child: ImageIcon(
-              AssetImage(AppAssets.icRadio),
-            ),
+          icon:ImageIcon(
+            AssetImage(AppAssets.icRadio),
           ),
           label: "Radio",
         ),
