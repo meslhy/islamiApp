@@ -34,7 +34,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         appBar: AppBar(
           elevation: 0.00,
           title: Text(
-              arg.suraName,
+               "سوره "+arg.suraName,
             style: AppTheme.appBArTitleTextStyle,
           ),
           centerTitle: true,
@@ -50,6 +50,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
               vertical:100,
           ),
           child: Container(
+            padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: AppColors.White,
               borderRadius: BorderRadius.circular(25),
