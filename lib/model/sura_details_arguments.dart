@@ -1,9 +1,12 @@
-import 'package:islami_route/ui/screens/sura_details/sura_details_screen.dart';
-
 class SuraDetailsArguments {
 
   String fileName ;
   String suraName ;
+  bool isQuranFile ;
 
-  SuraDetailsArguments( this.fileName , this.suraName);
+  SuraDetailsArguments( {
+    required this.fileName,
+    required this.suraName,
+    required this.isQuranFile,
+});
 }

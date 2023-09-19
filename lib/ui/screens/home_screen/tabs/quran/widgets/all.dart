@@ -14,17 +14,17 @@ List<String> nameOfSura = ["الفاتحه","البقرة","آل عمران","ا
   ,"التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر",
   "الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
 
-Widget buildSuraNAmeItems(BuildContext context , int index) =>InkWell(
+Widget buildSuraNAmeItems(BuildContext context , int index , bool isQuran) =>InkWell(
   onTap: (){
     Navigator.pushNamed(
         context,
         SuraDetailsScreen.routeName ,
-      arguments:SuraDetailsArguments("${index+1}.txt", nameOfSura[index]) ,
+      arguments:SuraDetailsArguments(fileName:isQuran? "${index+1}.txt" : "h${index+1}.txt" ,suraName: nameOfSura[index] , isQuranFile: isQuran ) ,
          );
   },
   child:Text(
 
-  nameOfSura[index],
+ isQuran ?  nameOfSura[index] : "حديث${index+1}",
 
   textAlign: TextAlign.center,
 
