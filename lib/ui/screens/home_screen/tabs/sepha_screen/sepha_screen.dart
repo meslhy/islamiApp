@@ -24,6 +24,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
     "اللهم صلي علي سيدنا محمد",
   ];
 
+
   int indexOfAllText =0;
 
   @override
