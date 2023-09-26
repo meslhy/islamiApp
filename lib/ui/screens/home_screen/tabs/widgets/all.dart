@@ -1,8 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:islami_route/model/sura_details_arguments.dart';
 import 'package:islami_route/ui/screens/sura_details/sura_details_screen.dart';
 
-import '../../../../../utils/app_colors.dart';
 List<String> nameOfSura = ["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
   ,"يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون"
   ,"النّور","الفرقان","الشعراء","النّمل","القصص","العنكبوت","الرّوم","لقمان","السجدة","الأحزاب","سبأ"
@@ -28,15 +28,7 @@ Widget buildSuraNAmeItems(BuildContext context , int index , bool isQuran) =>Ink
 
   textAlign: TextAlign.center,
 
-  style: TextStyle(
-
-  color: AppColors.Accent,
-
-  fontWeight: FontWeight.bold,
-
-  fontSize: 25,
-
-  ),
+  style: Theme.of(context).textTheme.bodySmall,
 
   ),
 );

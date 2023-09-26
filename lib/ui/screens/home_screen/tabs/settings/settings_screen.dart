@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_route/providers/settings_provider.dart';
+import 'package:islami_route/shared_locale/helper.dart';
 import 'package:islami_route/ui/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_route/ui/utils/app_theme.dart';
@@ -13,30 +14,34 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  bool isDark = false;
-  bool isAr = false ;
-  Key dark =Key("swetshDark");
+  late bool isDark ;
+  late bool isAr  ;
+  late SettingsProvider settingsProvider;
 
   @override
   Widget build(BuildContext context) {
-    SettingsProvider settingsProvider = Provider.of(context);
+    settingsProvider = Provider.of(context);
+    isDark = settingsProvider.isDarkEnabled();
+    isAr = settingsProvider.isArabicLocale();
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Enable arabic(العربيه)", style: AppTheme.settingsOptionTextStyle,),
+            Text("Enable arabic(العربيه)", style:Theme.of(context).textTheme.bodySmall,),
             Switch(
               value: isAr,
               onChanged: (newValue){
               isAr = newValue;
               if(isAr){
                 settingsProvider.setCurrentLocale("ar");
+                sharedPrefernce.putData(key: "isAR", value: true);
               }else {
                 settingsProvider.setCurrentLocale("en");
+                sharedPrefernce.putData(key: "isAR", value: false);
               }
-            }, activeColor: AppColors.primary,
+            }, activeColor:settingsProvider.isDarkEnabled()? AppColors.yellow : AppColors.primary,
             )
           ],
         ),
@@ -44,17 +49,20 @@ class _SettingScreenState extends State<SettingScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Dark mode",  style: AppTheme.settingsOptionTextStyle),
+            Text("Dark mode",  style:Theme.of(context).textTheme.bodySmall,),
             Switch(
               value: isDark,
               onChanged: (newValue){
               isDark = newValue;
               if(isDark){
                 settingsProvider.setCurrentMode(ThemeMode.dark);
+                sharedPrefernce.putData(key: "isDark", value: isDark);
               }else {
                 settingsProvider.setCurrentMode(ThemeMode.light);
+                sharedPrefernce.putData(key: "isDark", value: isDark);
+
               }
-            }, activeColor: AppColors.primary,
+            }, activeColor: AppColors.yellow,
             ),
           ],
         ),

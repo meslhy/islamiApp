@@ -31,7 +31,8 @@ abstract class AppTheme {
   ),
   scaffoldBackgroundColor: AppColors.Transparent,
   textTheme: TextTheme(
-  bodySmall: suraNameTextStyle
+  bodySmall: suraNameTextStyle,
+    bodyLarge:appBArTitleTextStyle,
   )
   );
   static ThemeData darkTheme =  ThemeData(
@@ -50,6 +51,8 @@ abstract class AppTheme {
       ),
       textTheme: TextTheme(
         bodySmall: suraNameTextStyle.copyWith(color: Colors.white),
+        bodyLarge: appBArTitleTextStyle.copyWith(color:Colors.white)
+
       )
   );
 

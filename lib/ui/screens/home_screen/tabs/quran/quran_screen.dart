@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:islami_route/ui/screens/home_screen/tabs/quran/widgets/all.dart';
+import 'package:islami_route/providers/settings_provider.dart';
+import 'package:islami_route/ui/screens/home_screen/tabs/widgets/all.dart';
 import 'package:islami_route/ui/utils/app_assets.dart';
 import 'package:islami_route/ui/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class QuranScreen extends StatelessWidget {
 
-  
+  late SettingsProvider settingsProvider;
+
   @override
   Widget build(BuildContext context) {
+    settingsProvider = Provider.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -22,33 +26,29 @@ class QuranScreen extends StatelessWidget {
           height: 8,
 
         ),
-        const Divider(
+
+        Divider(
           height: 3,
             thickness: 3,
-          color: AppColors.primary,
+          color: settingsProvider.isDarkEnabled()? AppColors.yellow: AppColors.primary,
         ),
         const SizedBox(
           height: 4,
 
         ),
-
          Text(
           AppLocalizations.of(context)!.suraName,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: AppColors.Accent,
-            fontSize: 25,
-            fontWeight: FontWeight.w500,
-          ),
+           style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(
           height: 4,
 
         ),
-        const Divider(
+         Divider(
           height: 3,
           thickness: 3,
-          color: AppColors.primary,
+          color: settingsProvider.isDarkEnabled()? AppColors.yellow: AppColors.primary,
         ),
 
         Expanded(
@@ -56,7 +56,6 @@ class QuranScreen extends StatelessWidget {
             child:ListView.separated(
                 itemBuilder: (context, index) => buildSuraNAmeItems(context , index , true) ,
                 separatorBuilder: (context, index) => const Divider(
-                  color: AppColors.primary,
                   height: 3,
                   thickness: 1,
                 ),

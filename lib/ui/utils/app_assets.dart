@@ -14,10 +14,13 @@ abstract class AppAssets{
   static const BodySebhaLogoDefault = "${baseImagesPath}body_sebha_logo.png";
 
   static const HeadSebhaLogoDefault = "${baseImagesPath}head_sebha_logo.png";
-  static const HeadSebhaLogoDark = "${baseImagesPath}head_sebha_logo_dark.png";
+  static const HeadSebhaLogoDark = "${baseImagesPath}head_sebha_dark.png";
 
-  static const DefaultBackGround = "${baseImagesPath}default_bg.png";
-  static const DarkBackGround = "${baseImagesPath}dark_bg.png";
-  static const SplashScreen = "${baseImagesPath}splash.png";
+  static const backGroundLight = "${baseImagesPath}default_bg.png";
+  static const backgroundDark = "${baseImagesPath}back_ground_dark.png";
+
+  static const logoSplashScreenLight = "${baseImagesPath}logo_splash_screen_light.png";
+
+  static const logoSplashScreenDark = "${baseImagesPath}logo_splash_screen_dark.png";
 
 }

@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AppAssets.DefaultBackGround,),
+          image: AssetImage(settingsProvider.isDarkEnabled()?AppAssets.backgroundDark :AppAssets.backGroundLight,),
           fit: BoxFit.fill,
         ),
       ),
@@ -44,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text(
               AppLocalizations.of(context)!.islami,
-            style:AppTheme.appBArTitleTextStyle ,
           ),
         ),
         body: tabs[currentIndex],
