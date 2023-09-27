@@ -1,4 +1,8 @@
+import 'package:islami_route/shared_locale/helper.dart';
+
 abstract class AppAssets{
+
+
 
   static const baseImagesPath = "assets/images/";
   static const icQuran = "${baseImagesPath}icon_quran.png";
@@ -22,5 +26,7 @@ abstract class AppAssets{
   static const logoSplashScreenLight = "${baseImagesPath}logo_splash_screen_light.png";
 
   static const logoSplashScreenDark = "${baseImagesPath}logo_splash_screen_dark.png";
+
+  static String splashScreen = "${baseImagesPath}splash.png";
 
 }

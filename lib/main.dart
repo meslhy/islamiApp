@@ -4,6 +4,7 @@ import 'package:islami_route/shared_locale/helper.dart';
 import 'package:islami_route/ui/screens/home_screen/home_screen.dart';
 import 'package:islami_route/ui/screens/home_screen/tabs/sepha_screen/sepha_screen.dart';
 import 'package:islami_route/ui/screens/home_screen/tabs/settings/settings_screen.dart';
+import 'package:islami_route/ui/screens/splash_screen/splash_screen.dart';
 import 'package:islami_route/ui/screens/sura_details/sura_details_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -49,8 +50,9 @@ class MyApp extends StatelessWidget {
         SebhaScreen.routeName :(context) =>  SebhaScreen(),
         SuraDetailsScreen.routeName :(context) => SuraDetailsScreen(),
         SettingScreen.routeName :(context) => SettingScreen(),
+        SplashScreen.routeName :(context) => SplashScreen(),
       },
-      initialRoute: HomeScreen.routeName,
+      initialRoute: SplashScreen.routeName,
     );
   }
 }

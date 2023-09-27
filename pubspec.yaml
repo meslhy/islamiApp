@@ -31,8 +31,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  flutter_native_splash: ^2.3.2
   flutter_localizations:
     sdk: flutter
   intl: any
