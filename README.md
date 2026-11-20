@@ -1,16 +1,26 @@
-# islami_route
+# Islami
 
-A new Flutter project.
+A Flutter Islamic app: read the Quran, browse the forty plus hadiths, use the tasbih counter, and listen to the radio tab. Available in Arabic and English, with light and dark themes.
+
+## Features
+
+- **Quran:** browse all suras and open any sura to read its full text
+- **Ahadeth:** a collection of 50 hadiths bundled as local text files
+- **Sebha:** a tap counter for tasbih
+- **Radio:** radio tab inside the home screen
+- **Settings:** switch language (Arabic / English) and theme (light / dark), saved across launches
+
+## Tech Stack
+
+- **Flutter / Dart**
+- **State management:** provider
+- **Localization:** flutter_localizations + intl (ar, en)
+- **Local storage:** shared_preferences
+- Quran sura text and hadith content ship as local assets
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```
